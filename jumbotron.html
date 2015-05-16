@@ -1,0 +1,34 @@
+<!--Jumobotron-->
+<div class="container">
+  <div class="jumbotron">
+      <h1 align="center"> <img class="img-responsive" src="logos/dbzlf2.png" alt="Dragon Ball Z Little Fighter 2"> </h1>
+    <p align="center"> <img class="img-responsive" src="logos/characters.png" alt="Characters"> </p>
+  </div>   
+</div>
+
+<div class="adsense">
+  <p align="center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- dbzlf2bannerad -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-9061009934750007"
+         data-ad-slot="7678708655"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </p>
+</div>
+
+
+<script>
+$(document).ready(function(){
+setTimeout("checkAds();", 1000);
+});
+ 
+function checkAds() {
+if ($(".adsense").height() == "0") {
+$(".adsense").after("<div class='container'><p align='center'> Please Consider disabling your adblocker to help support the development of the DBZ LF2 game mod.</div>");
+}
+}
+</script>
