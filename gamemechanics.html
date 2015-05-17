@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Game Mechanics - DBZ LF2 </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/dropdownmenu.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="js/nav.js"></script>
+</head>
+<body>
+
+
+<p id="navbar"></p>
+
+<p id="jumbotron"></p>
+
+
+<div class="container">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Basics</div>
+    <div class="panel-body">
+    <!-- SWAG
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Punch</td>
+              <td><img src="images/mech/punch.gif"></td>
+            </tr>
+            <tr>
+              <td>Super Punch</td>
+              <td><img src="images/mech/superpunch.gif"></td>
+            </tr>
+            <tr>
+              <td>Dance of Pain</td>
+              <td><img src="images/mech/danceofpain.gif"></td>
+            </tr>
+            <tr>
+              <td>Rowing</td>
+              <td><img src="images/mech/rowing.gif"></td>
+            </tr>
+          </tbody>
+        </table>
+        -->
+       <h4> Some Little Fighter 2 States </h3>
+       <div class="row">
+        <div class="col-md-3" style="background-color:;" >
+          <p align="center"> Punch </p>
+          <p align="center"> <img src="images/mech/punch.gif">
+        </div>
+        <div class="col-md-3" style="background-color:;">
+          <p align="center"> Super Punch </p>
+          <p align="center"> <img src="images/mech/superpunch.gif"> </p>
+        </div>
+        <div class="col-md-3" style="background-color:;">
+          <p align="center"> Dance of Pain </p>
+          <p align="center"> <img src="images/mech/danceofpain.gif">
+        </div>
+        <div class="col-md-3" style="background-color:;">
+          <p align="center"> Rowing </p>
+          <p align="center"> <img src="images/mech/rowing.gif">
+        </div>
+      </div> <br>
+        In Little Fighter 2, A character has defense at 1.0 and health set to 500. A punch usually does 20 damage. <br>
+        Goku (Buu) has an attack modifier of 1.15x and defense modifier of 2.30x <br>
+        That means his punch would do 23 damage instead of 20 and a punch that does 20 damage would only inflict 9 damage to him. <br>
+        <br>
+        <h4> A little more visual way to look at it </h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Original LF2 char </th>
+              <th>Goku (Buu) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Health</th>
+              <td align="center">
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger"  style="width:100%"> 500 </div>
+              </div>
+              </td>
+              <td align="center">
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger"  style="width:100%"> 500</div>
+              </div>
+              </td>
+            </tr>
+            <tr>
+              <th>Attack Modifier </th>
+              <td align="center"> 1.00x </td>
+              <td align="center"> 1.15x </td>
+            </tr>
+            <tr>
+              <th>Punch Damage </th>
+              <td align="center"> 20 </td>
+              <td align="center"> 23 </td>
+            </tr>
+            <tr>
+              <th>Defense Modifier </th>
+              <td align="center">1.00x</td>
+              <td align="center">2.30x</td>
+            </tr>
+            <tr>
+              <th>Damange Inflicted </th>
+              <td align="center">9</td>
+              <td align="center">23</td>
+            </tr>
+            <tr>
+              <th>Damange Taken </th>
+              <td align="center">23</td>
+              <td align="center">9</td>
+            </tr>
+            <tr>
+              <th>Health After </th>
+              <td align="center">
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger"  style="width:95.4%"> 477 </div>
+              </div>
+              </td>
+              <td align="center">
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger"  style="width:98.2%"> 491</div>
+              </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div class="panel panel-warning">
+    <div class="panel-heading">Super Saiyan Transformations (multipliers are added to base form)</div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Attack </th>
+            <th>Defense </th>
+            <th>Speed </th>
+            <th>Ki Consumption </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Super Saiyan</th>
+            <td align="center">1.40x </td>
+            <td align="center">1.40x </td>
+            <td align="center">1.20x </td>
+            <td align="center">1.25x </td>
+          </tr>
+          <tr>
+            <th>2nd Grade Super Saiyan <span class="label label-warning">Ascended</span> </th>
+            <td align="center"> 1.50x </td>
+            <td align="center"> 1.50x </td>
+            <td align="center"> 1.20x </td>
+            <td align="center"> 1.50x </td>
+          </tr>
+          <tr>
+              <th>3rd Grade Super Saiyan <span class="label label-warning">Ultra</span> </th>
+              <td align="center"> 1.60x </td>
+              <td align="center"> 1.60x </td>
+              <td align="center"> 0.90x </td>
+              <td align="center"> 1.75x </td>
+            </tr>
+            <tr>
+              <th>Full Power Super Saiyan </th>
+              <td align="center"> 1.40x </td>
+              <td align="center"> 1.40x </td>
+              <td align="center"> 1.20x </td>
+              <td align="center"> 1.10x </td>
+            </tr>
+            <tr>
+              <th>Super Saiyan 2 </th>
+              <td align="center"> 2.00x </td>
+              <td align="center"> 2.00x </td>
+              <td align="center"> 1.40x </td>
+              <td align="center"> 1.50x </td>              
+            </tr>
+            <tr>
+              <th>Super Saiyan 3 </th>
+              <td align="center"> 2.80x </td>
+              <td align="center"> 2.80x </td>
+              <td align="center"> 1.80x </td>
+              <td align="center"> 2.00x </td>  
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+<div class="panel panel-success">
+  <div class="panel-heading">Characters (& their defense modifiers)</div>    
+  <div class="panel-body">              
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Saiyan</th>
+        <th>Namek</th>
+        <th>Android</th>
+        <th>Buu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <table class="table table-bordered">
+            <tr>
+              <td align="center">Chiaotzu</td>
+              <td align="center">1.0</td>
+            </tr>
+              <tr>
+              <td align="center">Yamcha</td>
+              <td align="center">1.0</td>
+            </tr>
+            <tr>
+              <td align="center">Gohan</td>
+              <td align="center">1.1</td>
+            </tr>
+              <tr>
+              <td align="center">Krillin</td>
+              <td align="center">1.1</td>
+            </tr>
+            <tr>
+              <td align="center">Tien</td>
+              <td align="center">1.1</td>
+            </tr>
+              <tr>
+              <td align="center">Goku</td>
+              <td align="center">1.2</td>
+            </tr>
+            <tr>
+              <td align="center">Saibaman</td>
+              <td align="center">1.0</td>
+            </tr>
+              <tr>
+              <td align="center">Raditz</td>
+              <td align="center">1.0</td>
+            </tr>
+            <tr>
+              <td align="center">Nappa</td>
+              <td align="center">1.1</td>
+            </tr>
+              <tr>
+              <td align="center">Vegeta</td>
+              <td align="center">1.2</td>
+            </tr>
+          </table>
+        <td>
+          <table class="table table-bordered">
+            <tr>
+              <td align="center">Namekian Warrior</td>
+              <td align="center">1.1</td>
+            </tr>
+              <tr>
+              <td align="center">Krillin</td>
+              <td align="center">1.2</td>
+            </tr>
+            <tr>
+              <td align="center">Gohan</td>
+              <td align="center">1.3</td>
+            </tr>
+              <tr>
+              <td align="center">Vegeta</td>
+              <td align="center">1.5</td>
+            </tr>
+            <tr>
+              <td align="center">Piccolo</td>
+              <td align="center">1.5</td>
+            </tr>
+              <tr>
+              <td align="center">Goku</td>
+              <td align="center">1.6</td>
+            </tr>
+            <tr>
+              <td align="center">SS Goku</td>
+              <td align="center">2.2</td>
+            </tr>
+              <tr>
+              <td align="center">Frieza Henchmen</td>
+              <td align="center">1.0</td>
+            </tr>
+            <tr>
+              <td align="center">Guldo</td>
+              <td align="center">1.2</td>
+            </tr>
+              <tr>
+              <td align="center">Recoome</td>
+              <td align="center">1.2</td>
+            </tr>
+              <tr>
+              <td align="center">Burter</td>
+              <td align="center">1.3</td>
+            </tr>
+            <tr>
+              <td align="center">Jeice</td>
+              <td align="center">1.3</td>
+            </tr>
+              <tr>
+              <td align="center">Ginyu</td>
+              <td align="center">1.5</td>
+            </tr>
+            <tr>
+              <td align="center">Frieza (1st form)</td>
+              <td align="center">1.3</td>
+            </tr>
+              <tr>
+              <td align="center">Frieza (2nd form)</td>
+              <td align="center">1.4</td>
+            </tr>
+            <tr>
+              <td align="center">Freiza (3rd form)</td>
+              <td align="center">1.6</td>
+            </tr>
+              <tr>
+              <td align="center">Frieza (Final form)</td>
+              <td align="center">1.8</td>
+            </tr>
+            <tr>
+              <td align="center">Frieza (100%)</td>
+              <td align="center">2.0</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="table table-bordered">
+            <tr>
+              <td align="center">Krillin</td>
+              <td align="center">1.4</td>
+            </tr>
+              <tr>
+              <td align="center">Tien</td>
+              <td align="center">1.4</td>
+            </tr>
+            <tr>
+              <td align="center">Piccolo</td>
+              <td align="center">2.5</td>
+            </tr>
+              <tr>
+              <td align="center">Future Trunks (Sword)</td>
+              <td align="center">1.6</td>
+            </tr>
+            <tr>
+              <td align="center">SS Future Trunks (Sword)</td>
+              <td align="center">2.2</td>
+            </tr>
+              <tr>
+              <td align="center">Future Trunks (Armour)</td>
+              <td align="center">1.8</td>
+            </tr>
+            <tr>
+              <td align="center">SS Future Trunks (Armour)</td>
+              <td align="center">2.5</td>
+            </tr>
+              <tr>
+              <td align="center">Ultra Trunks</td>
+              <td align="center">2.9</td>
+            </tr>
+            <tr>
+              <td align="center">Vegeta</td>
+              <td align="center">1.8</td>
+            </tr>
+              <tr>
+              <td align="center">SS Vegeta</td>
+              <td align="center">2.5</td>
+            </tr>
+              <tr>
+              <td align="center">Gohan</td>
+              <td align="center">1.9</td>
+            </tr>
+            <tr>
+              <td align="center">SS Gohan</td>
+              <td align="center">2.7</td>
+            </tr>
+              <tr>
+              <td align="center">SS2 Gohan</td>
+              <td align="center">3.8</td>
+            </tr>
+            <tr>
+              <td align="center">Android 19</td>
+              <td align="center">2.0</td>
+            </tr>
+              <tr>
+              <td align="center">Dr. Gero</td>
+              <td align="center">2.0</td>
+            </tr>
+            <tr>
+              <td align="center">Mecha Frieza</td>
+              <td align="center">2.0</td>
+            </tr>
+              <tr>
+              <td align="center">18</td>
+              <td align="center">2.5</td>
+            </tr>
+            <tr>
+              <td align="center">17</td>
+              <td align="center">2.5</td>
+            </tr>
+            <tr>
+              <td align="center">Cell Jr.</td>
+              <td align="center">2.8</td>
+            </tr>
+              <tr>
+              <td align="center">Imperfect Cell</td>
+              <td align="center">2.4</td>
+            </tr>
+            <tr>
+              <td align="center">Semi-Perfect Cell</td>
+              <td align="center">2.6</td>
+            </tr>
+              <tr>
+              <td align="center">Perfect Cell</td>
+              <td align="center">3.0</td>
+            </tr>
+            <tr>
+              <td align="center">Super Perfect Cell</td>
+              <td align="center">3.5</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="table table-bordered">
+            <tr>
+              <td align="center">Goten</td>
+              <td align="center">1.7</td>
+            </tr>
+              <tr>
+              <td align="center">SS Goten</td>
+              <td align="center">2.4</td>
+            </tr>
+            <tr>
+              <td align="center">Trunks</td>
+              <td align="center">1.8</td>
+            </tr>
+              <tr>
+              <td align="center">SS Trunks</td>
+              <td align="center">2.5</td>
+            </tr>
+            <tr>
+              <td align="center">Gohan</td>
+              <td align="center">2.1</td>
+            </tr>
+              <tr>
+              <td align="center">SS Gohan</td>
+              <td align="center">2.9</td>
+            </tr>
+            <tr>
+              <td align="center">SS2 Gohan</td>
+              <td align="center">4.2</td>
+            </tr>
+              <tr>
+              <td align="center">Ultimate Gohan</td>
+              <td align="center">7.5</td>
+            </tr>
+            <tr>
+              <td align="center">Vegeta</td>
+              <td align="center">2.2</td>
+            </tr>
+              <tr>
+              <td align="center">SS Vegeta</td>
+              <td align="center">3.1</td>
+            </tr>
+              <tr>
+              <td align="center">SS2 Vegeta</td>
+              <td align="center">4.4</td>
+            </tr>
+            <tr>
+              <td align="center">Majin Vegeta</td>
+              <td align="center">4.6</td>
+            </tr>
+              <tr>
+              <td align="center">Goku</td>
+              <td align="center">2.3</td>
+            </tr>
+            <tr>
+              <td align="center">SS Goku</td>
+              <td align="center">3.2</td>
+            </tr>
+              <tr>
+              <td align="center">SS2 Goku</td>
+              <td align="center">4.6</td>
+            </tr>
+            </tr>
+              <tr>
+              <td align="center">SS3 Goku</td>
+              <td align="center">6.5</td>
+            </tr>
+            <tr>
+              <td align="center">Gotenks</td>
+              <td align="center">2.4</td>
+            </tr>
+              <tr>
+              <td align="center">SS Gotenks</td>
+              <td align="center">3.4</td>
+            </tr>
+            <tr>
+              <td align="center">SS3 Gotenks</td>
+              <td align="center">6.8</td>
+            </tr>
+            <tr>
+              <td align="center">Vegito</td>
+              <td align="center">9.5</td>
+            </tr>
+              <tr>
+              <td align="center">Super Vegito</td>
+              <td align="center">13.3</td>
+            </tr>
+            <tr>
+              <td align="center">Majin Soldier</td>
+              <td align="center">1.4</td>
+            </tr>
+              <tr>
+              <td align="center">Majin Buu</td>
+              <td align="center">5.0</td>
+            </tr>
+            <tr>
+              <td align="center">Super Buu</td>
+              <td align="center">6.5</td>
+            </tr>
+            <tr>
+              <td align="center">Super Buutenks</td>
+              <td align="center">7.0</td>
+            </tr>
+              <tr>
+              <td align="center">Super Buuhan</td>
+              <td align="center">8.8</td>
+            </tr>
+            <tr>
+              <td align="center">Kid Buu</td>
+              <td align="center">9.5</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>  
+</div>
+
+
+
+</body>
+</html>
+
+<script>
+$('#navbar').load('navbar.html');
+$('#jumbotron').load('jumbotron.html');
+</script>
+
+
+
